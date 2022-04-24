@@ -78,7 +78,7 @@ async function updateEmeterStatus(device, emeterRealtime) {
         value: emeterRealtime.power_mw
     }, null)
 
-    const currentDevice = deviceSettings[device.alias];
+    const currentDevice = deviceStatus;
     const treshold = currentDevice.milliwattThreshold
 
     let oldStatus = status.devices[device.alias];
