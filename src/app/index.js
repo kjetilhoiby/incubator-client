@@ -29,6 +29,8 @@ app.post(basePath + '/register', (req, res) => {
         emeterRealtime
     } = req.body;
 
+    console.log(req.body);
+
     updateEmeterStatus(device, emeterRealtime)
 
     res.json(status);
