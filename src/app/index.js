@@ -29,7 +29,7 @@ app.post(basePath + '/register', (req, res) => {
         emeterRealtime
     } = req.body;
 
-    updateEmeterStatus({alias: device}, emeterRealtime)
+    updateEmeterStatus(device, emeterRealtime)
 
     res.json(status);
 });
@@ -55,10 +55,7 @@ app.use(
 
 server.listen(port, () => { console.log(`listening to ${port}`)});
 
-
-
 async function updateEmeterStatus(device, emeterRealtime) {
-
 
     const deviceStatus = getDevice(status, device, emeterRealtime);
     const unfinishedJobs = await db.unfinished(device.alias);
