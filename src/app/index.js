@@ -5,33 +5,12 @@ const app = express();
 import cors from "cors";
 import http from "http";
 import { clientMarkup } from "./views/clientView.js";
-import { createdb } from "./dbschema/strings.js";
-import * as sqlite3pkg from "sqlite3";
-const basePath = '/incubator';
 
-const sqlite3 = sqlite3pkg.default;
+const basePath = '/incubator';
 const port = 30031;
 const server = http.createServer(app);
 
 app.use(cors());
-
-var db = new sqlite3.Database('local.db');
-
-db.serialize(function () {
-    db.run(createdb);
-
-    var stmt = db.prepare("INSERT INTO val VALUES (?)");
-    for (var i = 0; i < 10; i++) {
-        stmt.run("Ipsum " + i);
-    }
-    stmt.finalize();
-
-    db.each("SELECT rowid AS id, info FROM val", function (err, row) {
-        // console.log(row.id + ": " + row.info);
-    });
-});
-
-db.close();
 
 const status = {
     startTime: new Date(),
@@ -53,10 +32,6 @@ app.get(basePath + '/status', (req, res) => {
 
 app.get(basePath + '/client', (req, res) => {
     res.status(200).send(clientMarkup);
-});
-
-app.get(basePath + '/auth/user', (req, res) => {
-    res.status(200).json({ 'success': true });
 });
 
 app.use(
