@@ -19,7 +19,7 @@
   }
 
   li {
-    display: in
+    display: i
   }
 
 </style>
