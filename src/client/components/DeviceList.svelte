@@ -10,6 +10,18 @@
 
 <style>
 
+  ul {
+    padding-inline-start: 0px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  li {
+    display: in
+  }
+
 </style>
 
 <ul>

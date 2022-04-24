@@ -2,11 +2,11 @@ import Client from './components/Client.svelte';
 
 const elementName = 'incubator-client';
 const config = {
-    incubator: 'http://192.168.68.50:3000/status',
+    incubator: 'http://192.168.68.86:3000/status',
     title: 'Vaskerom'
 }
 
-class incubatorClient extends HTMLElement {
+class IncubatorClient extends HTMLElement {
 
     constructor() {
         super();
@@ -25,10 +25,10 @@ class incubatorClient extends HTMLElement {
 
 if (customElements && customElements.define) {
     if (!window.customElements.get(elementName)) {
-        customElements.define(elementName, incubatorClient);
+        customElements.define(elementName, IncubatorClient);
     }
 } else {
     document.registerElement(elementName, {
-        prototype: incubatorClient.prototype,
+        prototype: IncubatorClient.prototype,
     });
 }
