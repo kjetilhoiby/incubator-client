@@ -2,7 +2,7 @@ import Client from './components/Client.svelte';
 
 const elementName = 'incubator-client';
 const config = {
-    incubator: 'http://192.168.68.86:3000/status',
+    incubator: '/incubator/status',
     title: 'Vaskerom'
 }
 
