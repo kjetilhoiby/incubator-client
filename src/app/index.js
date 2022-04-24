@@ -15,6 +15,7 @@ const server = http.createServer(app);
 const db = new Database('test.db')
 
 app.use(cors());
+app.use(express.json());
 
 const status = getStatus();
 
@@ -24,12 +25,13 @@ app.get(basePath + '/', (req, res) => {
 })
 
 app.post(basePath + '/register', (req, res) => {
+    console.log(req.body);
+
     const {
         device, 
         emeterRealtime
     } = req.body;
 
-    console.log(req.body);
 
     updateEmeterStatus(device, emeterRealtime)
 
