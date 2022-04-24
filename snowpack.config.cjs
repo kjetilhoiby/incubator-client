@@ -4,7 +4,10 @@ const env = process.env.NODE_ENV;
 
 module.exports = {
   mount: {
-    "src/client": env == 'development' ? "/incubator/dist/src/client" : "/src/client",
+    "src/client": 
+    env == 'development' 
+    ? "/incubator/dist/src/client" 
+    : "/src/client",
     public: "/incubator/"
   },
   plugins: [
