@@ -7,7 +7,7 @@ import http from "http";
 import { clientMarkup } from "./views/clientView.js";
 import { createdb } from "./dbschema/strings.js";
 import * as sqlite3pkg from "sqlite3";
-const basePath = '/ninthlife';
+const basePath = '/incubator';
 
 const sqlite3 = sqlite3pkg.default;
 const port = 30031;
