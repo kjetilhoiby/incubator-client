@@ -4,8 +4,8 @@ const env = process.env.NODE_ENV;
 
 module.exports = {
   mount: {
-    "src/client": env == 'development' ? "/incubator-client/dist/src/client" : "/src/client",
-    public: "/incubator-client/"
+    "src/client": env == 'development' ? "/incubator/dist/src/client" : "/src/client",
+    public: "/incubator/"
   },
   plugins: [
     ["@snowpack/plugin-svelte", {
@@ -17,11 +17,11 @@ module.exports = {
   devOptions: {
     port: 9000,
     output: "stream",
-    openUrl: '/incubator-client/',
+    openUrl: '/incubator/client',
   },
   buildOptions: {
     out: 'dist',
-    baseUrl: '/incubator-client/dist',
+    baseUrl: '/incubator/dist',
     metaUrlPath: 'snowy-deps'
   },
   optimize: {
@@ -34,13 +34,13 @@ module.exports = {
   exclude: ["**/*.md"],
   routes: [
     {
-      src: "/incubator-client/client",
+      src: "/incubator/client",
       dest: (req, res) => { 
         proxy.web(req, res);
       },
     },
     {
-      src: "/incubator-client/status",
+      src: "/incubator/status",
       dest: (req, res) => {
         proxy.web(req, res);
       },

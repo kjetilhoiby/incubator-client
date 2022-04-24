@@ -1,5 +1,5 @@
 {
-  "name": "incubator",
+  "name": "incubator-client",
   "version": "1.0.0",
   "description": "",
   "main": "./src/app/index.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kjetilhoiby/incubator.git"
+    "url": "git+https://github.com/kjetilhoiby/incubator-client.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kjetilhoiby/incubator/issues"
+    "url": "https://github.com/kjetilhoiby/incubator-client/issues"
   },
-  "homepage": "https://github.com/kjetilhoiby/incubator#readme",
+  "homepage": "https://github.com/kjetilhoiby/incubator-client#readme",
   "dependencies": {
     "@snowpack/plugin-svelte": "^3.7.0",
     "concurrently": "^6.4.0",
