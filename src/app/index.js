@@ -6,7 +6,7 @@ import cors from "cors";
 import http from "http";
 import { clientMarkup } from "./views/clientView.js";
 import { Database } from "./database/index.js";
-import { getStatus } from "./utils.mjs";
+import { getDevice, getStatus } from "./utils.mjs";
 
 const basePath = '/incubator';
 const port = 30031;
