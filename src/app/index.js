@@ -48,6 +48,10 @@ app.get(basePath + '/client', (req, res) => {
 
 app.use(
     basePath + '/dist/src/client',
+    (req, res, next) => {
+        console.log(req); 
+        next()
+    },
     express.static("./dist/src/client")
 );
 
