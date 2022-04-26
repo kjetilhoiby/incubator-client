@@ -1,5 +1,5 @@
 import sqliteCollection from 'sqlite3';
-import schema from './schema/index.mjs';
+import schema from './schema/index.js';
 
 const { createJobDB, createObservationDB } = schema;
 

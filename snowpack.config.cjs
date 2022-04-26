@@ -1,8 +1,8 @@
-const httpProxy = require("http-proxy");
+import httpProxy from "http-proxy";
 const proxy = httpProxy.createServer({ target: "http://localhost:30031" });
 const env = process.env.NODE_ENV;
 
-module.exports = {
+export default {
   mount: {
     "src/client": 
     env == 'development' 

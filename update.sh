@@ -1,4 +1,4 @@
 git pull
 npm i
 npm run build
-npm run nodemon
+pm2 restart incubator

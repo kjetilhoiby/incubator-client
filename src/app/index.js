@@ -6,23 +6,21 @@ import cors from "cors";
 import http from "http";
 import { clientMarkup } from "./views/clientView.js";
 import { Database } from "./database/index.js";
-import { getDevice, getStatus } from "./utils.mjs";
+import { getDevice, getStatus } from "./utils.js";
 
 const basePath = '/incubator';
 const port = 30031;
 const server = http.createServer(app);
-
-const db = new Database('test.db')
+const db = new Database('test.db');
 
 app.use(cors());
 app.use(express.json());
 
 const status = getStatus();
 
-
 app.get(basePath + '/', (req, res) => {
     res.status(200).send(clientMarkup)
-})
+});
 
 app.post(basePath + '/register', (req, res) => {
     console.log(req.body);
@@ -32,14 +30,15 @@ app.post(basePath + '/register', (req, res) => {
         emeterRealtime
     } = req.body;
 
-
     updateEmeterStatus(device, emeterRealtime)
 
     res.json(status);
 });
 
 app.get(basePath + '/status', (req, res) => {
-    status.runTime = Math.round((new Date().getTime() - new Date(status.startTime).getTime()) / 1000);
+    status.runTime = Math.round((
+        new Date().getTime() 
+        - new Date(status.startTime).getTime()) / 1000);
     res.json(status);
 });
 
