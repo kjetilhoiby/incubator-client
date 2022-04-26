@@ -8,7 +8,7 @@ export const clientMarkup = `
   <body>
     <incubator-client>
     </incubator-client>
-    <script type="module" src="/dist/src/client/index.js"></script>
+    <script type="module" src="dist/src/client/index.js"></script>
   </body>
 </html>
 `
