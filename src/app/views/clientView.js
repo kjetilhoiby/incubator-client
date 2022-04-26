@@ -3,12 +3,12 @@ export const clientMarkup = `
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>clientview</title>
   </head>
   <body>
     <incubator-client>
     </incubator-client>
-    <script type="module" src="./dist/src/client/index.js"></script>
+    <script type="module" src="/dist/src/client/index.js"></script>
   </body>
 </html>
 `
